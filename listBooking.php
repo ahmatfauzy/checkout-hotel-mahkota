@@ -7,11 +7,12 @@
   <link rel="stylesheet" href="lib/bootstrap-5.3.3-dist/css/bootstrap.min.css">
   <link rel="icon" href="img/icon.png">
   <link rel="stylesheet" href="style/listBooking.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
 </head>
 
 <body>
-<header class="bg-light bg-body-tertiary shadow fixed-top" data-bs-theme="light">
+<header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="900" class="bg-light bg-body-tertiary shadow fixed-top" data-bs-theme="light">
   <div class="container">
     <nav class="navbar navbar-expand-lg bg-light bg-body-tertiary" data-bs-theme="light">
       <div class="container-fluid">
@@ -43,7 +44,7 @@
   </div>
 </header>
 
-<main class="container mt-5 pt-5">
+<main data-aos="zoom-in" data-aos-duration="500" data-aos-delay="1000" class="container mt-5 pt-5">
   <section id="tentang-kami">
     <div class="text-center mb-4">
       <h2>Data Pemesanan</h2>
@@ -110,5 +111,9 @@
   <p>Hak Cipta © 2024 Hotel Mahkota</p>
 </footer>
 <script src="lib/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
