@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>History Pemesanan - Hotel Mahkota</title>
-  <link rel="stylesheet" href="../lib/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-  <link rel="icon" href="../img/icon.png">
-  <link rel="stylesheet" href="../style/listBooking.css">
+  <link rel="stylesheet" href="lib/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="style/listBooking.css">
 
 </head>
 
@@ -15,7 +15,7 @@
   <div class="container">
     <nav class="navbar navbar-expand-lg bg-light bg-body-tertiary" data-bs-theme="light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><strong>Hotel Mutiara</strong></a>
+        <a class="navbar-brand" href="#"><strong>Hotel Mahkota</strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -107,8 +107,8 @@
 </main>
 
 <footer class="py-3 text-center shadow p-3 text-light bg-dark">
-  <p>Hak Cipta © 2024 Hotel Mutiara</p>
+  <p>Hak Cipta © 2024 Hotel Mahkota</p>
 </footer>
-<script src="../lib/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
