@@ -5,22 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>History Pemesanan - Hotel Mahkota</title>
   <link rel="stylesheet" href="../lib/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-    main {
-      flex: 1;
-    }
-    footer {
-      flex-shrink: 0;
-    }
-  </style>
+  <link rel="icon" href="../img/icon.png">
+  <link rel="stylesheet" href="../style/listBooking.css">
+
 </head>
 
 <body>
@@ -28,7 +15,7 @@
   <div class="container">
     <nav class="navbar navbar-expand-lg bg-light bg-body-tertiary" data-bs-theme="light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Hotel Mutiara</a>
+        <a class="navbar-brand" href="#"><strong>Hotel Mutiara</strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -119,8 +106,8 @@
   </section>
 </main>
 
-<footer class="text-center bg-light text-dark shadow p-3">
-  <p>Hak Cipta © 2023 Hotel Mahkota</p>
+<footer class="py-3 text-center shadow p-3 text-light bg-dark">
+  <p>Hak Cipta © 2024 Hotel Mutiara</p>
 </footer>
 <script src="../lib/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 </body>
