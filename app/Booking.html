@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pesan Kamar - Hotel Mahkota</title>
+    <link
+      rel="stylesheet"
+      href="../lib/bootstrap-5.3.3-dist/css/bootstrap.min.css"
+    />
+  </head>
+  <style>
+    footer {
+      margin-top: 30px;
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 15px 0;
+    }
+  </style>
+
+  <body>
+    <header
+      class="bg-light bg-body-tertiary shadow fixed-top"
+      data-bs-theme="light"
+    >
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-lg bg-light bg-body-tertiary"
+          data-bs-theme="light"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Hotel Mutiara</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="daftar-harga.html">Daftar Harga</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="Booking.html">Pesan Kamar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="listBooking.php">History List</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container mt-5 pt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <!-- Mulai Card -->
+          <div class="card">
+            <div class="card-header text-center">
+              <h2>Pesan Kamar</h2>
+            </div>
+            <div class="card-body">
+              <form id="booking-form" action="proses_pesan.php" method="POST">
+                <div class="mb-3">
+                  <label for="nama" class="form-label">Nama Pemesan:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nama"
+                    name="nama"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Jenis Kelamin:</label><br />
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="laki-laki"
+                      name="jenis-kelamin"
+                      value="Laki-laki"
+                      required
+                    />
+                    <label class="form-check-label" for="laki-laki"
+                      >Laki-laki</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="perempuan"
+                      name="jenis-kelamin"
+                      value="Perempuan"
+                      required
+                    />
+                    <label class="form-check-label" for="perempuan"
+                      >Perempuan</label
+                    >
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="nomor-identitas" class="form-label"
+                    >Nomor Identitas:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nomor-identitas"
+                    name="nomor-identitas"
+                    required
+                    maxlength="16"
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="tipe-kamar" class="form-label">Tipe Kamar:</label>
+                  <select
+                    class="form-select"
+                    id="tipe-kamar"
+                    name="tipe-kamar"
+                    required
+                    onchange="updateHarga()"
+                  >
+                    <option value="" selected disabled>Pilih Tipe Kamar</option>
+                    <option value="Kamar Standar" data-harga="200000">
+                      Kamar Standar
+                    </option>
+                    <option value="Kamar Deluxe" data-harga="500000">
+                      Kamar Deluxe
+                    </option>
+                    <option value="Kamar Executive" data-harga="1000000">
+                      Kamar Executive
+                    </option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="harga" class="form-label">Harga:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="harga"
+                    name="harga"
+                    readonly
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="tanggal-pesan" class="form-label"
+                    >Tanggal Pesan:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="tanggal-pesan"
+                    name="tanggal-pesan"
+                    placeholder="dd/mm/yyyy"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="durasi-menginap" class="form-label"
+                    >Durasi Menginap (hari):</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="durasi-menginap"
+                    name="durasi-menginap"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3 form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="breakfast"
+                    name="breakfast"
+                    value="Ya"
+                  />
+                  <label class="form-check-label" for="breakfast"
+                    >Pesan Breakfast? + Rp. 80.000/Day</label
+                  >
+                </div>
+
+                <div class="mb-3">
+                  <label for="total-bayar" class="form-label"
+                    >Total Bayar:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="total-bayar"
+                    name="total-bayar"
+                    readonly
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-primary mb-3"
+                  onclick="hitungTotal()"
+                >
+                  Hitung Total Harga
+                </button>
+                <button type="submit" class="btn btn-success mb-3">
+                  Simpan
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger mb-3"
+                  onclick="clearForm()"
+                >
+                  Cancel
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- Akhir Card -->
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-center mt-5 shadow p-3">
+      <p>Hak Cipta © 2023 Hotel Mahkota</p>
+    </footer>
+
+    <script src="../lib/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(function () {
+        $("#tanggal-pesan").datepicker({
+          dateFormat: "dd/mm/yy",
+          changeYear: true,
+          changeMonth: true,
+        });
+      });
+
+      document
+        .getElementById("nomor-identitas")
+        .addEventListener("input", function () { // Menghapus karakter selain angka dari nilai input
+          this.value = this.value.replace(/\D/g, "");
+        });
+
+      let durasiMenginapInput = document.getElementById("durasi-menginap");
+      durasiMenginapInput.addEventListener("input", function () {
+        let durasiMenginapValue = durasiMenginapInput.value;
+
+        // Validasi jika nilai yang dimasukkan bukan angka
+        if (
+          isNaN(durasiMenginapValue) ||
+          durasiMenginapValue === "" ||
+          durasiMenginapValue <= 0
+        ) {
+          alert("Input Harus Angka");
+          durasiMenginapInput.value = ""; // Kosongkan nilai input jika tidak valid
+        }
+      });
+
+      function updateHarga() {
+        const selectElement = document.getElementById("tipe-kamar");
+        const selectedOption =
+          selectElement.options[selectElement.selectedIndex];
+        const selectedPrice = selectedOption.getAttribute("data-harga");
+
+        document.getElementById("harga").value = selectedPrice;
+
+        // Update total bayar jika durasi menginap telah diisi
+        hitungTotal();
+      }
+
+      function hitungTotal() {
+        let hargaKamar = parseFloat(document.getElementById("harga").value);
+        let durasiMenginap = parseInt(
+          document.getElementById("durasi-menginap").value
+        );
+
+        let totalBayar = hargaKamar * durasiMenginap;
+
+        // Diskon 10% jika durasi menginap 3 hari atau lebih
+        if (durasiMenginap >= 3) {
+          totalBayar *= 0.9; // Mengurangi 10%
+        }
+
+        // Penambahan biaya jika pesan breakfast
+        if (document.getElementById("breakfast").checked) {
+          totalBayar += durasiMenginap * 80000;
+        }
+
+        document.getElementById("total-bayar").value = totalBayar;
+      }
+
+      function clearForm() {
+        document.getElementById("booking-form").reset();
+      }
+
+      $("#booking-form").on("submit", function (event) {
+        event.preventDefault(); // Mencegah pengiriman form secara default
+
+        let nomorIdentitas = document.getElementById("nomor-identitas").value;
+
+        // Validasi Nomor Identitas harus 16 digit
+        if (nomorIdentitas.length !== 16 || isNaN(nomorIdentitas)) {
+          alert("Isian salah. Data Identitas Harus 16 digit angka.");
+          return; // Hentikan proses jika validasi tidak terpenuhi
+        }
+
+        // Simpan data menggunakan AJAX
+        $.ajax({
+          type: "POST",
+          url: "proses_pesan.php",
+          data: $(this).serialize(), // Mengambil data formulir
+          success: function (response) {
+            alert("Data berhasil disimpan ke dalam database!");
+            window.location.href = "listBooking.php"; // Arahkan ke halaman listBooking.php
+          },
+          error: function (xhr, status, error) {
+            alert("Terjadi kesalahan: " + error);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

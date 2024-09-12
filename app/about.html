@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Kami - Hotel Mahkota</title>
+    <link
+      rel="stylesheet"
+      href="../lib/bootstrap-5.3.3-dist/css/bootstrap.min.css"
+    />
+    <style>
+
+      body {
+        background-color: #f8f9fa;
+        font-family: "Arial", sans-serif;
+      }
+
+      header {
+        margin-bottom: 30px;
+      }
+
+      #tentang-kami {
+        padding: 20px 15px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        color: #343a40;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: #495057;
+        line-height: 1.6;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #0056b3;
+      }
+
+      footer {
+        margin-top: 30px;
+        background-color: white;
+        color: black;
+        text-align: center;
+        padding: 15px 0;
+      }
+
+      footer p {
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header
+      class="bg-light bg-body-tertiary shadow fixed-top"
+      data-bs-theme="light"
+    >
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-lg bg-light bg-body-tertiary"
+          data-bs-theme="light"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Hotel Mutiara</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="daftar-harga.html">Daftar Harga</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="about.html">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Booking.html">Pesan Kamar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="listBooking.php">History List</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-5">
+      <div class="pt-5">
+        <section id="tentang-kami">
+          <center><h2>Tentang Kami</h2></center>
+          <p id="deskripsiHotel"></p>
+
+          <h3>Kontak Kami</h3>
+          <p>Telepon: <a href="tel:+6282337994456">082337994456</a></p>
+          <p>
+            Email:
+            <a href="mailto:mahkota1234@gmail.com">mahkota1234@gmail.com</a>
+          </p>
+          <p>
+            Alamat:
+            <a href="https://maps.app.goo.gl/vyQrSxGjCF9C83nC8" target="_blank"
+              >Cirebon, Jawa Barat, Indonesia</a
+            >
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      fetch("../dll/deskripsi.txt")
+        .then((response) => response.text())
+        .then((data) => {
+          const deskripsi = document.getElementById("deskripsiHotel");
+          const paragraphs = data.split("\n\n"); // Memisahkan teks menjadi paragraf
+          paragraphs.forEach((paragraph) => {
+            const p = document.createElement("p");
+            p.textContent = paragraph;
+            deskripsi.appendChild(p);
+          });
+        })
+        .catch((error) => {
+          console.log("Terjadi kesalahan:", error);
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="shadow p-3">
+      <p>Hak Cipta © 2023 Hotel Mahkota</p>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="../lib/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
