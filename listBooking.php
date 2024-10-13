@@ -12,9 +12,9 @@
 </head>
 
 <body>
-<header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="900" class="bg-light bg-body-tertiary shadow fixed-top" data-bs-theme="light">
+<header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="900" class="bg-white shadow fixed-top" data-bs-theme="light">
   <div class="container">
-    <nav class="navbar navbar-expand-lg bg-light bg-body-tertiary" data-bs-theme="light">
+    <nav class="navbar navbar-expand-lg bg-white" data-bs-theme="light">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html"><strong>Hotel Mahkota</strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

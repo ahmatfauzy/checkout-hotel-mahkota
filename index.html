@@ -19,14 +19,11 @@
       data-aos="fade-down"
       data-aos-easing="linear"
       data-aos-duration="900"
-      class="bg-light bg-body-tertiary shadow fixed-top"
+      class="bg-white shadow fixed-top"
       data-bs-theme="light"
     >
       <div class="container">
-        <nav
-          class="navbar navbar-expand-lg bg-light bg-body-tertiary"
-          data-bs-theme="light"
-        >
+        <nav class="navbar bg-white navbar-expand-lg" data-bs-theme="light">
           <div class="container-fluid">
             <a class="navbar-brand" href="#"><strong>Hotel Mahkota</strong></a>
             <button
@@ -67,45 +64,35 @@
     </header>
 
     <!-- Full Width Section -->
-    <section class="d-flex align-items-center full-layar">
-      <div class="container">
-        <div class="container-fluid">
-          <div class="row">
-            <div
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine"
-              data-aos-duration="500"
-              class="col-md-6 p-0"
-            >
-              <img
-                src="img/home.png"
-                alt="Gambar Kamar Hotel"
-                class="img-fluid w-100 h-100"
-              />
-            </div>
-            <div
-              data-aos="fade-left"
-              data-aos-anchor="#example-anchor"
-              data-aos-offset="500"
-              data-aos-duration="900"
-              data-aos-delay="500"
-              class="col-md-6 p-5 d-flex align-items-center"
-            >
-              <div>
-                <h2>Selamat Datang di Hotel Mahkota</h2>
-                <p>
-                  Nikmati kenyamanan dan kemewahan yang luar biasa di Hotel
-                  Mahkota. Kami menawarkan kamar-kamar eksklusif dengan
-                  pemandangan menakjubkan dan fasilitas terbaik yang akan
-                  membuat Anda merasa seperti di rumah.
-                </p>
-                <a href="Booking.html" class="btn btn-primary"
-                  >Pesan Sekarang</a
-                >
-              </div>
-            </div>
-          </div>
+    <section class="video-background full-layar">
+      <video autoplay muted loop class="video-full">
+        <source src="video/hotel.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="overlay">
+        <div class="text-center text-white">
+          <h2 data-aos="fade-down" data-aos-delay="500">
+            Selamat Datang di Hotel Mahkota
+          </h2>
+          <p
+            data-aos="fade-down"
+            data-aos-delay="600"
+            class="text-center mx-auto"
+            style="width: 70%"
+          >
+            Nikmati kenyamanan dan kemewahan yang luar biasa di Hotel Mahkota.
+            Kami menawarkan kamar-kamar eksklusif dengan pemandangan menakjubkan
+            dan fasilitas terbaik yang akan membuat Anda merasa seperti di
+            rumah.
+          </p>
+          <a
+            data-aos="fade-down"
+            data-aos-delay="700"
+            href="Booking.html"
+            class="btn btn-primary"
+            >Pesan Sekarang</a
+          >
         </div>
       </div>
     </section>
